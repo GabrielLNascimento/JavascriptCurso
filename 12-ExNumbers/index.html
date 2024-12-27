@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de Numbers</title>
+</head>
+
+<body>
+    <script>
+        let num = parseFloat(prompt("Digite um número"))
+
+        if (isNaN(num)) {
+            document.write('O numero passado não é um digito')
+        }
+
+        document.write(`<h1>Seu numero é ${num}</h1>`)
+        document.write(`Raiz Quadrada: ${Math.sqrt(num)} </br>`)
+        document.write(`${num} é inteiro: ${Number.isInteger(num)} </br>`)
+        document.write(`É NaN: ${isNaN(num)} </br>`)
+        document.write(`Arredonda para baixo: ${Math.round(num)} </br>`)
+        document.write(`Arredonda para cima: ${Math.ceil(num)} </br>`)
+        document.write(`Duas casas decimais: ${num.toFixed(2)}`)
+    </script>
+</body>
+
+</html>
