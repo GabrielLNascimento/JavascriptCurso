@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        const array = ["Abacaxi", "Melancia", "Tomate", "Abobora", "Banana", "Uva"]
+
+        document.write(array + "</br>")
+        document.write(array[0]  + "</br>")
+        document.write(array[array.length - 1] + "</br>")
+        document.write(array.length + "</br>")
+        
+        array.push("Limão")
+        document.write(array + "</br>")
+        
+        // estou adicionando o elemento que eu tirei
+        array.push(array.shift())
+        array.push(array.shift())
+        document.write(array + "</br>")
+
+        array.unshift(array.pop())
+        array.unshift(array.pop())
+        document.write(array + "</br>")
+
+        document.write(array.slice(array.length - 4, array.length - 1))
+    </script>
+</body>
+</html>
