@@ -61,3 +61,33 @@ soma2(1) // vai retornar NaN, se nao tiver B
 // para pular um parametro, e apenas colocar valor no parametro b
 // temos que escrever undefined no parametro
 soma2(undefined, 10)
+
+
+// atribuição via desestruturação
+function mostrarPessoa({ nome, idade }) {
+    console.log(nome, idade)
+}
+// tirando as chaves nome e idade do objeto e passando para o parametro
+mostrarPessoa({ nome: "Gabriel", idade: 17 })
+
+
+// utilizando arrays
+function mostrarValores([v1, v2, v3]) {
+    console.log(v1, v2, v3)
+}
+mostrarValores(['Gabriel', 'Liz', 10, 20])
+
+
+// operador rest -> vai receber o resto dos argumentos passados
+function conta(operador, acumulador, ...numeros) {
+    for (let num of numeros) {
+        if (operador === '+') acumulador += num
+        if (operador === '-') acumulador -= num
+        if (operador === '*') acumulador *= num
+        if (operador === '/') acumulador /= num
+    }
+    console.log(acumulador)
+    console.log(arguments)
+}
+
+conta("*", 1, 11, 22, 33, 44, 55)
