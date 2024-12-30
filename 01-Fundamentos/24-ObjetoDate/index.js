@@ -73,3 +73,9 @@ function zeroEsquerda(num) {
 const data8 = new Date()
 const dataBrasil = formataData(data8)
 console.log(dataBrasil)
+
+
+
+const data9 = new Date()
+console.log(data9.toLocaleTimeString('pt-br', { hour12: false }))
+console.log(data9.toLocaleDateString('pt-br', { hour12: false }))
