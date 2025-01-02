@@ -1,0 +1,46 @@
+## comandos inicial
+-> npm init -y
+
+
+## instalar todas as devDependeces
+-> npm i --save-dev @babel/cli @babel/preset-env @babel/core babel-loader webpack webpack-cli
+-> npm i core-js regenerator-runtime
+
+
+## ARQUIVOS INICIAIS
+- webpack.config.js (nome)
+- pasta 'src' -> arquivo de entrada (index.js)
+- pasta 'public' -> tudo que o usuario vai ver | pasta assets => js e css
+- dentro da pasta 'public' -> arquivo index.html, importando o arquivo bundle.js
+
+## CONFIGURAR ARQUIVO webpack:
+- criar uma variavel path (require("path"))
+- exportar um objeto usando "module.exports = {}"
+Configurando esse objeto:
+    mode: "development",
+    entry: "./src/index.js",
+    output: {
+        path: path.resolve(__dirname, 'public', 'assets', 'js'),
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [{
+            exclude: /node_modules/,
+            test: /\.js$/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/env']
+                }
+            }
+        }]
+    },
+    devtool: 'source-map'
+
+
+## TESTAR O WEBPACK
+no arquivo package.json:
+- "scripts": {
+    "gera": "webpack -w"
+}
+comando: npm run gera
