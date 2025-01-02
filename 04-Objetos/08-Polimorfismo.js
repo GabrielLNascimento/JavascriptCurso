@@ -35,6 +35,8 @@ function ContaCorrente(agencia, conta, saldo, limite) {
 // herdar os metodos do objeto Conta
 ContaCorrente.prototype = Object.create(Conta.prototype)
 ContaCorrente.prototype.constructor = ContaCorrente
+
+// sobrescrevendo o metodo sacar da classe pai
 ContaCorrente.prototype.sacar = function(valor) {
     if (valor > (this.saldo + this.limite)) {
         console.log(`Limite atingido`)

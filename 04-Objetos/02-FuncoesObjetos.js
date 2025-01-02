@@ -5,6 +5,7 @@ function Produto(nome, preco, estoque) {
     // this.nome = nome
     // this.preco = preco
 
+    // definir propriedades de um objeto
     Object.defineProperties(this, {
         nome: {
             enumerable: true,

@@ -1,26 +1,37 @@
 function Calculadora(n1, n2) {
-    this.n1 = n1
-    this.n2 = n2
+    Object.defineProperties(this, {
+        n1: {
+            enumerable: true,
+            value: n1,
+            writable: true
+        },
+        n2: {
+            enumerable: true,
+            value: n2,
+            writable: true
+        }
+    })
 }
 
-Calculadora.prototype.Somar = function() {
+Calculadora.prototype.soma = function() {
     return this.n1 + this.n2
 }
 
-Calculadora.prototype.Sub = function() {
+Calculadora.prototype.sub = function() {
     return this.n1 - this.n2
 }
 
-Calculadora.prototype.Mult = function() {
+Calculadora.prototype.mult = function() {
     return this.n1 * this.n2
 }
 
-Calculadora.prototype.Div = function() {
+Calculadora.prototype.div = function() {
     return this.n1 / this.n2
 }
 
-const calc = new Calculadora(10, 20)
-console.log(calc.Somar())
-console.log(calc.Sub())
-console.log(calc.Mult())
-console.log(calc.Div())
+const calc = new Calculadora(10, 2)
+console.log(calc)
+console.log(calc.soma())
+console.log(calc.sub())
+console.log(calc.mult())
+console.log(calc.div())
