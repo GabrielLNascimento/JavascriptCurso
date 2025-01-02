@@ -5,14 +5,14 @@ btnEnviar.addEventListener('click', async e => {
     const input = document.getElementById('search-cep')
     const cepFormat = input.value.replace(/\D/g, '')
     const cep = await fetchCep(cepFormat)
-    if (cep) carregaDados(cep)
+    if (cep) loadData(cep)
 })
 
 async function fetchCep(cep) {
     try {
         const url = `https://viacep.com.br/ws/${cep}/json/`
         const response = await fetch(url)
-        if (response.status !== 200) throw new Error("Erro ao buscar cep") 
+        if (response.status !== 200) throw new Error("Error in search cep") 
         const json = await response.json()
         return json
     } catch(err) {
@@ -20,7 +20,7 @@ async function fetchCep(cep) {
     }
 }
 
-function carregaDados(cep) {
+function loadData(cep) {
     const container = document.getElementById("resultado")
     container.textContent = ""
     const p = document.createElement("p")
