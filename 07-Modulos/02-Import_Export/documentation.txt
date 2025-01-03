@@ -1,0 +1,42 @@
+todos os arquivos que quisermos exportar, ficaram na pasta 'src'
+
+script no html:
+<script src="./index.js" type="module"></script>
+
+### utilizando nome das coisas para exportar ###
+- exemplo de exportação:
+    const nome = valor
+    export { nome }
+
+
+- exemplo de importação:
+    import { nome } from 'nome do caminho'
+    console.log(nome)
+
+
+- trocar nome:
+    import {nome as n} from 'nome do caminho'
+    console.log(n)
+
+
+- exportar quando estiver criando:
+    export const nome = valor
+    export class Pessoa { ...codigo... }
+
+
+- Importar tudo:
+    import * as MeuModulo from 'nome do caminho'
+    --> MeuModulo => objeto de todas as coisas que estão sendo exportadas
+
+
+- exportação default
+---> apenas um pode ser
+export default function nome() { ...codigo... }
+
+na hora de importar:
+import qualquerNome from 'nome do caminho'
+
+
+referencias
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
